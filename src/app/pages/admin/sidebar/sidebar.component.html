@@ -1,0 +1,63 @@
+<mat-card>
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item routerLink="/admin">
+            <mat-icon mat-list-icon>home</mat-icon>
+            Home
+        </button>
+
+        <button class="mb10" mat-list-item routerLink="/admin/profile">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            Profile
+        </button>
+        
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon mat-list-icon>bookmark_border</mat-icon>
+                        Categories
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+                <button mat-list-item routerLink="/admin/categories">
+                    <mat-icon mat-list-icon>list</mat-icon>
+                    Categories
+                </button>
+                <button mat-list-item routerLink="/admin/add-category">
+                    <mat-icon mat-list-icon>add_circle_outline</mat-icon>
+                    Add Categories
+                </button>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <div class="mt10">
+
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon mat-list-icon>live_help</mat-icon>
+                            List Quiz
+                        </mat-panel-title>
+    
+                    </mat-expansion-panel-header>
+                    <button mat-list-item routerLink="/admin/quizzes">
+                        <mat-icon mat-list-icon>quiz</mat-icon>
+                        Quizzes
+                    </button>
+            
+                    <button mat-list-item routerLink="/admin/add-quiz">
+                        <mat-icon mat-list-icon>add</mat-icon>
+                        Add Quizzes
+                    </button>
+            
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+       
+
+
+    </mat-action-list>
+</mat-card>

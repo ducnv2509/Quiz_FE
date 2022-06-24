@@ -1,0 +1,48 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card>
+                    <mat-card-header>
+
+                        <mat-card-title>
+                            Read the instructions of this age carefully
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            One step more to go
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="ml20">
+                        <h2>{{quiz.title}}</h2>
+                        <p>{{quiz.description}}</p>
+                        <mat-divider></mat-divider>
+                        <h1 class="mt20">Important Instructions</h1>
+
+                        <ul>
+                            <li>This quiz is only for practice purposes</li>
+                            <li>You have submit quiz on with in <b>{{quiz.numberOfQuestion * 2}} minutes</b></li>
+                            <li>You can attempt the quiz any number of times</li>
+                            <li>There ara <b>{{quiz.numberOfQuestion}} question</b> in this quiz</li>
+                            <li>Each question carries
+                                <b>{{quiz.maxMarks/ quiz.numberOfQuestion}} marks</b>. No negative marking for wrong
+                                ones
+                            </li>
+                        </ul>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <h1>Attempting Quiz</h1>
+                        <ul>
+                            <li>Click <b>Start Quiz</b> button to start the quiz </li>
+
+                        </ul>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center">
+                        <button mat-raised-button color="primary"
+                        (click)="startQuiz()"
+                        >Start</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

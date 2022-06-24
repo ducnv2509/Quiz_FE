@@ -1,0 +1,66 @@
+<h1>Question of {{qTitle}}</h1>
+<!-- <h1>Question of {{numberOfQuestion}}</h1> -->
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container text-center">
+                <button mat-raised-button color="primary" [routerLink]="'/admin/add-question/' + qid + '/' + qTitle + '/' + numberOfQuestion">Add
+                    Question</button>
+                    <button 
+                    id="formGO"
+                    (click)="randomForm()"
+                    mat-button color="primary"
+                    >Random</button>
+                <!-- <form (submit)="randomForm()"
+                class="mt20" *ngIf="isOK">
+                    <button 
+                     mat-button color="primary"
+                     >Random</button>
+                </form> -->
+
+            </div>
+            <mat-card *ngFor="let q of questions; let i = index" class="mt20">
+                <mat-card-content>
+
+                    <p>
+                        <b id="l65"> Q {{i+1}}: </b>
+                        <span class="ml20" [innerHTML]="q.content"></span>
+                    </p>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>1: </b> {{q.option1}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>2: </b> {{q.option2}}</p>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>3: </b>{{q.option3}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>4: </b>{{q.option4}}</p>
+                            </div>
+                        </div>
+
+                        <mat-divider></mat-divider>
+                        <p class="mt20"><b>Correct Answer: {{q.answer}}</b></p>
+                    </div>
+
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button (click)="deleteQuestion(q.quesId)" color="warn">Delete</button>
+                    <button mat-button color="primary" [routerLink]="'/admin/question/'+ q.quesId">Update</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="text-center mt20">
+        <button (click)="addAll()" mat-raised-button color="primary">Add All</button>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
